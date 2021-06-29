@@ -14,17 +14,11 @@ import java.net.URI;
 
 public class Websocket extends WebSocketClient {
 
-    private static Websocket instance;
-    private GetPackagesInfo getPackagesInfo;
+    private final GetPackagesInfo getPackagesInfo;
 
     public Websocket(URI serverUri, PackageManager packageManager, Context context) {
         super(serverUri);
-        instance = this;
         getPackagesInfo = new GetPackagesInfo(packageManager, context);
-    }
-
-    public static Websocket instance() {
-        return instance;
     }
 
     @Override
@@ -41,7 +35,6 @@ public class Websocket extends WebSocketClient {
     @Override
     public void onClose(int code, String reason, boolean remote) {
         Log.e("WebSocket", "onClose " + reason);
-        instance = null;
     }
 
     @Override

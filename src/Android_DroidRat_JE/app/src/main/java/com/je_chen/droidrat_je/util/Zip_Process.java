@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Enumeration;
+import java.util.Objects;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
@@ -18,11 +19,11 @@ import java.util.zip.ZipInputStream;
 public class Zip_Process {
 
     /**
-     * 解壓縮一個文件
+     * unzip file
      *
-     * @param zipFile    壓縮文件
-     * @param folderPath 解壓縮的目標目錄
-     * @throws IOException 解壓縮的過程出錯時拋出
+     * @param zipFile    need to unzip zip file
+     * @param folderPath unzip file target folder
+     * @throws IOException when unzip error
      */
 
     public void upZipFile(File zipFile, String folderPath)
@@ -41,12 +42,12 @@ public class Zip_Process {
 
             if (!desFile.exists()) {
                 File fileParentDir = desFile.getParentFile();
-                if (!fileParentDir.exists()) {
+                if (!Objects.requireNonNull(fileParentDir).exists()) {
                     fileParentDir.mkdirs();
                 }
             }
             OutputStream out = new FileOutputStream(desFile);
-            byte buffer[] = new byte[1024 * 1024];
+            byte[] buffer = new byte[1024 * 1024];
             int realLength = in.read(buffer);
             while (realLength != -1) {
                 out.write(buffer, 0, realLength);
@@ -60,24 +61,24 @@ public class Zip_Process {
     }
 
     /**
-     * 解壓縮一個文件
+     * unzip one zip file
      */
     public void unzip(String zipFile, String targetDir) {
-        int BUFFER = 4096; // 4KB緩衝區
-        String strEntry; // 保存每個ZIP條目
+        int BUFFER = 4096; // 4KB Buffer
+        String strEntry; // save every zip item
         try {
-            BufferedOutputStream dest = null; // 緩衝輸出流
+            BufferedOutputStream dest = null;
             FileInputStream fis = new FileInputStream(zipFile);
             ZipInputStream zis = new ZipInputStream(
                     new BufferedInputStream(fis));
-            ZipEntry entry; // 每個ZIP條目的實例
+            ZipEntry entry;
             while ((entry = zis.getNextEntry()) != null) {
                 try {
                     int count;
-                    byte data[] = new byte[BUFFER];
+                    byte[] data = new byte[BUFFER];
                     strEntry = entry.getName();
                     File entryFile = new File(targetDir + strEntry);
-                    File entryDir = new File(entryFile.getParent());
+                    File entryDir = new File(Objects.requireNonNull(entryFile.getParent()));
                     if (!entryDir.exists()) {
                         entryDir.mkdirs();
                     }

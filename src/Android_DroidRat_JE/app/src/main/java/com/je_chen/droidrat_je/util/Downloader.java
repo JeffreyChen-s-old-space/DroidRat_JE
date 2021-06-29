@@ -28,8 +28,8 @@ public class Downloader {
 
     private MessageCallBack callBack;
 
-    private ExecutorService mExecutorService;
-    private Handler mHandler;
+    private final ExecutorService mExecutorService;
+    private final Handler mHandler;
 
     @UiThread
     public Downloader(int threadCount) {
@@ -38,7 +38,6 @@ public class Downloader {
     }
 
     public void download(final String url, final String path, final String fileName, final MessageCallBack callback) {
-        this.callBack = callBack;
         mExecutorService.execute(new Runnable() {
             @Override
             public void run() {
@@ -53,9 +52,8 @@ public class Downloader {
             downloadDir.mkdirs();
 
             // Naively read filename from url
-            String filename = fileName;
 
-            File file = new File(downloadDir, filename);
+            File file = new File(downloadDir, fileName);
 
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder().url(url).build();
@@ -65,14 +63,14 @@ public class Downloader {
 
             BufferedSink sink = Okio.buffer(Okio.sink(file));
 
-            long totalLength = response.body().contentLength();
+            long totalLength = Objects.requireNonNull(response.body()).contentLength();
             notifyStarted(callback, totalLength);
 
             long downloadedLength = 0;
             long bufferSize = 0;
             long lastUpdate = 0;
             while (true) {
-                long length = response.body().source().read(sink.buffer(), BUFFER_SIZE);
+                long length = Objects.requireNonNull(response.body()).source().read(sink.getBuffer(), BUFFER_SIZE);
 
                 if (length < 0) break;
 
@@ -101,38 +99,18 @@ public class Downloader {
     }
 
     private void notifyStarted(final MessageCallBack callback, final long totalLength) {
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                callback.onDownloadStarted(totalLength);
-            }
-        });
+        mHandler.post(() -> callback.onDownloadStarted(totalLength));
     }
 
     private void notifyProgress(final MessageCallBack callback, final long downloadedLength) {
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                callback.onDownloadProgress(downloadedLength);
-            }
-        });
+        mHandler.post(() -> callback.onDownloadProgress(downloadedLength));
     }
 
     private void notifyComplete(final MessageCallBack callback, final File file) {
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                callback.onDownloadComplete(file);
-            }
-        });
+        mHandler.post(() -> callback.onDownloadComplete(file));
     }
 
     private void notifyError(final MessageCallBack callback, final Exception e) {
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                callback.onDownloadError(e);
-            }
-        });
+        mHandler.post(() -> callback.onDownloadError(e));
     }
 }

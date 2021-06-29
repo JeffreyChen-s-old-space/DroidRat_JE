@@ -5,6 +5,7 @@
 
 package com.je_chen.droidrat_je.util;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -18,6 +19,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -27,17 +29,14 @@ public class FileIO {
     private String fileName = "null";
     private File sdPath = null;
 
-    //設置檔案路徑
     public void set_path(String path) {
         this.path = path;
     }
 
-    //設置檔案檔名
     public void set_fileName(String fileName) {
         this.fileName = fileName;
     }
 
-    //設置檔案路徑跟檔名
     public void set_pathFilename(String path, String fileName) {
         this.path = path;
         this.fileName = fileName;
@@ -71,7 +70,6 @@ public class FileIO {
     }
 
 
-    //搜尋檔案是否存在
     public boolean searchFile(String path, String fileName) {
         this.path = path;
         this.fileName = fileName;
@@ -83,7 +81,6 @@ public class FileIO {
         return file_exist;
     }
 
-    //搜尋檔案是否存在
     public boolean searchFile(File sdPath, String fileName) {
         this.sdPath = sdPath;
         this.fileName = fileName;
@@ -97,7 +94,7 @@ public class FileIO {
         return file_exist;
     }
 
-    //搜尋檔案是否存在
+
     public boolean searchFile(String path, String fileName, File sdPath) {
         this.path = path;
         this.fileName = fileName;
@@ -113,10 +110,9 @@ public class FileIO {
         return file_exist;
     }
 
-    //是否安裝此檔案
     public boolean appInstalled(Context context, String name) {
         PackageManager manager = context.getPackageManager();
-        List<PackageInfo> pkgList = manager.getInstalledPackages(0);
+        @SuppressLint("QueryPermissionsNeeded") List<PackageInfo> pkgList = manager.getInstalledPackages(0);
         for (int i = 0; i < pkgList.size(); i++) {
             PackageInfo pI = pkgList.get(i);
             if (pI.packageName.equalsIgnoreCase(name))
@@ -129,7 +125,7 @@ public class FileIO {
         File directory = new File(dirPath);
         // get all the files from a directory
         File[] fileList = directory.listFiles();
-        for (File file : fileList) {
+        for (File file : Objects.requireNonNull(fileList)) {
             if (file.isFile()) {
                 files.add(file);
             } else if (file.isDirectory()) {

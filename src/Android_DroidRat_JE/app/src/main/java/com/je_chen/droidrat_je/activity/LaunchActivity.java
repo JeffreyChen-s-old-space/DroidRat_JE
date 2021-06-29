@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.je_chen.droidrat_je.R;
@@ -36,7 +35,6 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
 
     ImageView imageView;
 
-    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +52,6 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
                 // LOCATION
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION,
-                Manifest.permission.ACCESS_BACKGROUND_LOCATION,
 
                 //SMS
                 Manifest.permission.RECEIVE_SMS,

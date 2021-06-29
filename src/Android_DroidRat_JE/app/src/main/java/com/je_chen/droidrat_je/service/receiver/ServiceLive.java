@@ -10,7 +10,7 @@ import com.je_chen.droidrat_je.service.command.ProcessCommandService;
 
 public class ServiceLive extends BroadcastReceiver {
 
-    static String TAG = "BroadcastReciever";
+    static String TAG = "BroadcastReceiver";
 
     @Override
     public void onReceive(Context context, Intent intent) {
