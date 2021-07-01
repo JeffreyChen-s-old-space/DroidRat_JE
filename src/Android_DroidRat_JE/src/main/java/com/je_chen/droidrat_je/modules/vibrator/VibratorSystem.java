@@ -1,4 +1,4 @@
-package com.je_chen.droidrat_je.modules.vibrator;
+package com.je_chen.droidrat_je.rat.modules.vibrator;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

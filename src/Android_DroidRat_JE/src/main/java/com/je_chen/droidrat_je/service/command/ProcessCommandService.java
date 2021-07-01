@@ -11,8 +11,8 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import com.je_chen.droidrat_je.command.process_super.CommandProcess;
-import com.je_chen.droidrat_je.socket.websocket.Websocket;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandProcess;
+import com.je_chen.droidrat_je.util.socket.websocket.Websocket;
 
 import java.net.URI;
 

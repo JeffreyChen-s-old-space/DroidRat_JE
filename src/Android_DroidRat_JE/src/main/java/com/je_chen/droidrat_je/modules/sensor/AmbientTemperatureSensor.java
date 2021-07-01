@@ -1,11 +1,11 @@
-package com.je_chen.droidrat_je.modules.sensor;
+package com.je_chen.droidrat_je.rat.modules.sensor;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
-import com.je_chen.droidrat_je.modules.sensor.sensor_super.SensorInterface;
+import com.je_chen.droidrat_je.rat.modules.sensor.sensor_super.SensorInterface;
 
 import java.util.List;
 

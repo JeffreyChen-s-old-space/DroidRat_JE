@@ -1,4 +1,4 @@
-package com.je_chen.droidrat_je.modules.sensor.sensor_super;
+package com.je_chen.droidrat_je.rat.modules.sensor.sensor_super;
 
 public interface SensorInterface<T>{
 

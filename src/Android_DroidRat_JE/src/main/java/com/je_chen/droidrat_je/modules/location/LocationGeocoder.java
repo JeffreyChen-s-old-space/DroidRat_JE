@@ -1,4 +1,4 @@
-package com.je_chen.droidrat_je.modules.location;
+package com.je_chen.droidrat_je.rat.modules.location;
 
 import android.content.Context;
 import android.location.Address;

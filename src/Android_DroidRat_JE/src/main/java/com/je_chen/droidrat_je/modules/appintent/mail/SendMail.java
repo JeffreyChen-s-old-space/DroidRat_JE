@@ -1,4 +1,4 @@
-package com.je_chen.droidrat_je.modules.appintent.mail;
+package com.je_chen.droidrat_je.rat.modules.appintent.mail;
 
 import android.content.Context;
 import android.content.Intent;

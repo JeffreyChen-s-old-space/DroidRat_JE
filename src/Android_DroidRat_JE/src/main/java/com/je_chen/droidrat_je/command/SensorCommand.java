@@ -2,8 +2,8 @@ package com.je_chen.droidrat_je.command;
 
 import android.hardware.SensorManager;
 
-import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandFather;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandProcessInterface;
 
 public class SensorCommand extends CommandFather implements CommandProcessInterface {
 

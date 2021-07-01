@@ -1,4 +1,4 @@
-package com.je_chen.droidrat_je.modules.appinstall;
+package com.je_chen.droidrat_je.rat.modules.appinstall;
 
 public class InstallApp {
 

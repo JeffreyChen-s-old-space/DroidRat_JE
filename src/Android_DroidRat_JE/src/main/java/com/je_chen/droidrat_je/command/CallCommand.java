@@ -4,9 +4,9 @@ import android.content.Context;
 import android.util.Log;
 
 
-import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
-import com.je_chen.droidrat_je.modules.appintent.call.Call;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandFather;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandProcessInterface;
+import com.je_chen.droidrat_je.rat.modules.appintent.call.Call;
 
 import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
 

@@ -1,4 +1,4 @@
-package com.je_chen.droidrat_je.socket.tcp;
+package com.je_chen.droidrat_je.util.socket.tcp;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

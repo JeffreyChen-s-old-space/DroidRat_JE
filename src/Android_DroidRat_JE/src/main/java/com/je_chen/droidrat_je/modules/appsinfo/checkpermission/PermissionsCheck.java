@@ -1,4 +1,4 @@
-package com.je_chen.droidrat_je.modules.appsinfo.checkpermission;
+package com.je_chen.droidrat_je.rat.modules.appsinfo.checkpermission;
 
 import android.app.Activity;
 import android.content.pm.PackageManager;

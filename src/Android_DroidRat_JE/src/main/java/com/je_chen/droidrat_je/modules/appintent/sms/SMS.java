@@ -1,4 +1,4 @@
-package com.je_chen.droidrat_je.modules.appintent.sms;
+package com.je_chen.droidrat_je.rat.modules.appintent.sms;
 
 import android.content.ContentResolver;
 import android.content.Context;

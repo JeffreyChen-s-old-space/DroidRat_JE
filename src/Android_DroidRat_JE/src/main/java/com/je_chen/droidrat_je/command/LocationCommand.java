@@ -3,10 +3,10 @@ package com.je_chen.droidrat_je.command;
 import android.content.Context;
 import android.location.LocationManager;
 
-import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
-import com.je_chen.droidrat_je.modules.location.LocationGeocoder;
-import com.je_chen.droidrat_je.modules.location.LocationSystem;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandFather;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandProcessInterface;
+import com.je_chen.droidrat_je.rat.modules.location.LocationGeocoder;
+import com.je_chen.droidrat_je.rat.modules.location.LocationSystem;
 
 
 public class LocationCommand extends CommandFather implements CommandProcessInterface {

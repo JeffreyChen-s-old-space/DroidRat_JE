@@ -1,8 +1,8 @@
 package com.je_chen.droidrat_je.command;
 
-import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
-import com.je_chen.droidrat_je.modules.appintent.play.Play;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandFather;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandProcessInterface;
+import com.je_chen.droidrat_je.rat.modules.appintent.play.Play;
 
 public class PlayCommand extends CommandFather implements CommandProcessInterface {
 

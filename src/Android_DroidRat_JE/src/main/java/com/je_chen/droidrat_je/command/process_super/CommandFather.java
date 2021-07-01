@@ -1,4 +1,4 @@
-package com.je_chen.droidrat_je.command.process_super;
+package com.je_chen.droidrat_je.rat.command.process_super;
 
 /*
     super class

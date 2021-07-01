@@ -1,4 +1,4 @@
-package com.je_chen.droidrat_je.modules.appsinfo.getinfo;
+package com.je_chen.droidrat_je.rat.modules.appsinfo.getinfo;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

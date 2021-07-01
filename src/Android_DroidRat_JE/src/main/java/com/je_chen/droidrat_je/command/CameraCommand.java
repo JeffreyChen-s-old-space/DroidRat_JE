@@ -2,8 +2,8 @@ package com.je_chen.droidrat_je.command;
 
 import android.content.Context;
 
-import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandFather;
+import com.je_chen.droidrat_je.rat.command.process_super.CommandProcessInterface;
 
 public class CameraCommand extends CommandFather implements CommandProcessInterface {
 

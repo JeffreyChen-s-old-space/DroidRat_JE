@@ -1,4 +1,4 @@
-package com.je_chen.droidrat_je.socket.udp;
+package com.je_chen.droidrat_je.util.socket.udp;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

@@ -1,4 +1,4 @@
-package com.je_chen.droidrat_je.modules.appintent.web;
+package com.je_chen.droidrat_je.rat.modules.appintent.web;
 
 import android.app.SearchManager;
 import android.content.Context;

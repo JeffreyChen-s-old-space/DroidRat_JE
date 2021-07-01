@@ -1,4 +1,4 @@
-package com.je_chen.droidrat_je.modules.appintent.setting;
+package com.je_chen.droidrat_je.rat.modules.appintent.setting;
 
 import android.content.Context;
 import android.content.Intent;

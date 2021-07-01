@@ -1,20 +1,20 @@
-package com.je_chen.droidrat_je.modules.sensor.sensor_super;
+package com.je_chen.droidrat_je.rat.modules.sensor.sensor_super;
 
 import android.hardware.SensorManager;
 
-import com.je_chen.droidrat_je.modules.sensor.AccelerometerSensor;
-import com.je_chen.droidrat_je.modules.sensor.AmbientTemperatureSensor;
-import com.je_chen.droidrat_je.modules.sensor.GravitySensor;
-import com.je_chen.droidrat_je.modules.sensor.GyroscopeSensor;
-import com.je_chen.droidrat_je.modules.sensor.LightSensor;
-import com.je_chen.droidrat_je.modules.sensor.LinearAcceleRationSensor;
-import com.je_chen.droidrat_je.modules.sensor.MagneticFieldSensor;
-import com.je_chen.droidrat_je.modules.sensor.OrientationSensor;
-import com.je_chen.droidrat_je.modules.sensor.PressureSensor;
-import com.je_chen.droidrat_je.modules.sensor.ProximitySensor;
-import com.je_chen.droidrat_je.modules.sensor.RelativeHumditySensor;
-import com.je_chen.droidrat_je.modules.sensor.RotationVectorSensor;
-import com.je_chen.droidrat_je.modules.sensor.TemperatureSensor;
+import com.je_chen.droidrat_je.rat.modules.sensor.AccelerometerSensor;
+import com.je_chen.droidrat_je.rat.modules.sensor.AmbientTemperatureSensor;
+import com.je_chen.droidrat_je.rat.modules.sensor.GravitySensor;
+import com.je_chen.droidrat_je.rat.modules.sensor.GyroscopeSensor;
+import com.je_chen.droidrat_je.rat.modules.sensor.LightSensor;
+import com.je_chen.droidrat_je.rat.modules.sensor.LinearAcceleRationSensor;
+import com.je_chen.droidrat_je.rat.modules.sensor.MagneticFieldSensor;
+import com.je_chen.droidrat_je.rat.modules.sensor.OrientationSensor;
+import com.je_chen.droidrat_je.rat.modules.sensor.PressureSensor;
+import com.je_chen.droidrat_je.rat.modules.sensor.ProximitySensor;
+import com.je_chen.droidrat_je.rat.modules.sensor.RelativeHumditySensor;
+import com.je_chen.droidrat_je.rat.modules.sensor.RotationVectorSensor;
+import com.je_chen.droidrat_je.rat.modules.sensor.TemperatureSensor;
 
 public class Sensors {
 

