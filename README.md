@@ -20,10 +20,10 @@
 * Microsoft Visual Studio 2019
 * Google Android Studio
 #### env
-* Windows 10
+* Windows 10 ~ 11
 * Java OpenJDK 14.02 & 1.8.0_265
 * C# ver.4 & ver.5
-* Android ver.6 & Android Ver.9 & Android Ver.10 
+* Android ver.6 Marshmello ~ Android Ver.10 Q 
 #### Use note:
 * Need Android Studio & Android SDK to build apk or using exist apk
 * OpenJDK & to run or build java server
