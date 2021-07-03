@@ -10,7 +10,7 @@ public class SendMail {
         Intent intent = new Intent();
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.setAction(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:" + to));
+        intent.setData(Uri.parse("mailto: " + to));
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, text);
         context.startActivity(intent);

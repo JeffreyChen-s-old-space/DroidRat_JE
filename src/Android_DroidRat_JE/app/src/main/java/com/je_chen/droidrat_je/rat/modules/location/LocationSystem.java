@@ -16,8 +16,9 @@ public class LocationSystem implements LocationListener {
 
     private double altitude, latitude, longitude, speed;
 
-    private String type;
-    private int sec, meter;
+    private final String type;
+    private final int sec;
+    private final int meter;
 
     @SuppressLint("MissingPermission")
     public LocationSystem(@NonNull LocationManager locationManager, String type, int sec, int meter) {

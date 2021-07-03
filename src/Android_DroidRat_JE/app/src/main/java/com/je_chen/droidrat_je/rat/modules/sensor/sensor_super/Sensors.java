@@ -7,9 +7,8 @@ import com.je_chen.droidrat_je.rat.modules.sensor.AmbientTemperatureSensor;
 import com.je_chen.droidrat_je.rat.modules.sensor.GravitySensor;
 import com.je_chen.droidrat_je.rat.modules.sensor.GyroscopeSensor;
 import com.je_chen.droidrat_je.rat.modules.sensor.LightSensor;
-import com.je_chen.droidrat_je.rat.modules.sensor.LinearAcceleRationSensor;
+import com.je_chen.droidrat_je.rat.modules.sensor.LinearAccelaRationSensor;
 import com.je_chen.droidrat_je.rat.modules.sensor.MagneticFieldSensor;
-import com.je_chen.droidrat_je.rat.modules.sensor.OrientationSensor;
 import com.je_chen.droidrat_je.rat.modules.sensor.PressureSensor;
 import com.je_chen.droidrat_je.rat.modules.sensor.ProximitySensor;
 import com.je_chen.droidrat_je.rat.modules.sensor.RelativeHumditySensor;
@@ -28,7 +27,7 @@ public class Sensors {
     private final GravitySensor gravitySensor;
     private final GyroscopeSensor gyroscopeSensor;
     private final LightSensor lightSensor;
-    private final LinearAcceleRationSensor linearAcceleRationSensor;
+    private final LinearAccelaRationSensor linearAccelaRationSensor;
     private final MagneticFieldSensor magneticFieldSensor;
     private final OrientationSensor orientationSensor;
     private final PressureSensor pressureSensor;
@@ -43,7 +42,7 @@ public class Sensors {
         this.gravitySensor = new GravitySensor(sensorManager);
         this.gyroscopeSensor = new GyroscopeSensor(sensorManager);
         this.lightSensor = new LightSensor(sensorManager);
-        this.linearAcceleRationSensor = new LinearAcceleRationSensor(sensorManager);
+        this.linearAccelaRationSensor = new LinearAccelaRationSensor(sensorManager);
         this.magneticFieldSensor = new MagneticFieldSensor(sensorManager);
         this.orientationSensor = new OrientationSensor(sensorManager);
         this.pressureSensor = new PressureSensor(sensorManager);
@@ -74,8 +73,8 @@ public class Sensors {
         return lightSensor;
     }
 
-    public LinearAcceleRationSensor getLinearAcceleRationSensor() {
-        return linearAcceleRationSensor;
+    public LinearAccelaRationSensor getLinearAcceleRationSensor() {
+        return linearAccelaRationSensor;
     }
 
 

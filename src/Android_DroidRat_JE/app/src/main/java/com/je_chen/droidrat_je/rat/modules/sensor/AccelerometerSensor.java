@@ -12,16 +12,15 @@ import java.util.List;
 
 public class AccelerometerSensor implements SensorInterface<List<Float>>, SensorEventListener {
 
-    private SensorManager sensorManager;
-    private boolean canUse;
-    private Sensor sensor;
-    private List<Float> valueList = new ArrayList<>();
+    private final SensorManager sensorManager;
+    private final boolean canUse;
+    private final List<Float> valueList = new ArrayList<>();
 
     public AccelerometerSensor(SensorManager sensorManager) {
         this.sensorManager = sensorManager;
         canUse = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null;
         if (canUse) {
-            sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+            Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
             sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_UI);
         }
     }

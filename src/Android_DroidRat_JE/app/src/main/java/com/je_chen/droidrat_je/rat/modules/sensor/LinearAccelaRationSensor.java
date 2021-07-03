@@ -7,15 +7,14 @@ import android.hardware.SensorManager;
 
 import com.je_chen.droidrat_je.rat.modules.sensor.sensor_super.SensorInterface;
 
-public class OrientationSensor implements SensorInterface<Object>, SensorEventListener {
-
+public class LinearAccelaRationSensor implements SensorInterface<Object>, SensorEventListener {
 
     private SensorManager sensorManager;
-    private boolean canUse;
+    private final boolean canUse;
 
-    public OrientationSensor(SensorManager sensorManager) {
+    public LinearAccelaRationSensor(SensorManager sensorManager) {
         this.sensorManager = sensorManager;
-        canUse = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION) != null;
+        canUse = sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION) != null;
     }
 
     @Override

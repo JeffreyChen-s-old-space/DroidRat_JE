@@ -12,10 +12,10 @@ import java.util.List;
 
 public class AmbientTemperatureSensor implements SensorInterface<List<Float>>, SensorEventListener {
 
-    private SensorManager sensorManager;
-    private boolean canUse;
+    private final SensorManager sensorManager;
+    private final boolean canUse;
     private Sensor sensor;
-    private List<Float> valueList = new ArrayList<>();
+    private final List<Float> valueList = new ArrayList<>();
 
     public AmbientTemperatureSensor(SensorManager sensorManager) {
         this.sensorManager = sensorManager;

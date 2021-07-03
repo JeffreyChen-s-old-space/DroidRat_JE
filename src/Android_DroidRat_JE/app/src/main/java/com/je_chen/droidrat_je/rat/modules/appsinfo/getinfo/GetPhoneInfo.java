@@ -109,10 +109,10 @@ public class GetPhoneInfo {
             ProcessBuilder processBuilder = new ProcessBuilder(DATA);
             Process process = processBuilder.start();
             InputStream inputStream = process.getInputStream();
-            byte[] byteArry = new byte[1024];
+            byte[] bytearray = new byte[1024];
 
-            while (inputStream.read(byteArry) != -1) {
-                output.append(new String(byteArry)).append("-");
+            while (inputStream.read(bytearray) != -1) {
+                output.append(new String(bytearray)).append("-");
             }
             inputStream.close();
         } catch (Exception ex) {

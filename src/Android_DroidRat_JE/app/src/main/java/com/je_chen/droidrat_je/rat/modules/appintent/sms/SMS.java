@@ -52,7 +52,7 @@ public class SMS {
     }
 
     public void sendSMS(Context context, String mobileNumber, String smsText) {
-        Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + mobileNumber));
+        Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("sms to:" + mobileNumber));
         intent.putExtra("sms_body", smsText);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);

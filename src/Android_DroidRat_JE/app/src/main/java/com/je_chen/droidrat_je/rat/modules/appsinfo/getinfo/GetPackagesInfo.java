@@ -17,7 +17,7 @@ import java.util.List;
 
 public class GetPackagesInfo {
 
-    private PackageManager packageManager;
+    private final PackageManager packageManager;
 
     private Context context;
 

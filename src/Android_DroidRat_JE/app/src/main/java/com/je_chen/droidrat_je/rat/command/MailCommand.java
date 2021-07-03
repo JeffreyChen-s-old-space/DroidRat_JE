@@ -9,9 +9,9 @@ import static com.je_chen.droidrat_je.service.command.ProcessCommandService.webs
 
 public class MailCommand extends CommandFather {
 
-    private Context context;
+    private final Context context;
 
-    private SendMail sendMail;
+    private final SendMail sendMail;
 
     public MailCommand(Context context) {
         this.context = context;

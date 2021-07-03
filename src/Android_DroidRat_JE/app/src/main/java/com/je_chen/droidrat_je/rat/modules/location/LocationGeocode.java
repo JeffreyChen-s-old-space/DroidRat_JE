@@ -24,7 +24,7 @@ public class LocationGeocode {
         StringBuilder addressString = new StringBuilder();
         List<Address> addressList = getAddressList(latitude, longitude, dataCount);
         if (addressList == null || addressList.size() == 0)
-            return "無法取得";
+            return "can't get info";
         Address address = addressList.get(0);
         for (int i = 0; i < address.getMaxAddressLineIndex(); i++)
             addressString.append(address.getAddressLine(i)).append("\n");

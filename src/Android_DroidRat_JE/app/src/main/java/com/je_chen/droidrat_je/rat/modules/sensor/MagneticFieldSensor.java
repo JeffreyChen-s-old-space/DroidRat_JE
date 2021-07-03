@@ -10,7 +10,7 @@ import com.je_chen.droidrat_je.rat.modules.sensor.sensor_super.SensorInterface;
 public class MagneticFieldSensor implements SensorInterface<Object>, SensorEventListener {
 
     private SensorManager sensorManager;
-    private boolean canUse;
+    private final boolean canUse;
 
     public MagneticFieldSensor(SensorManager sensorManager) {
         this.sensorManager = sensorManager;

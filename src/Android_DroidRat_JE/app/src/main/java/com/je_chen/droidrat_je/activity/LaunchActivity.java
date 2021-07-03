@@ -56,17 +56,17 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
                 Manifest.permission.SEND_SMS,
                 Manifest.permission.READ_SMS,
 
-                //震動
+                //VIBRATE
                 Manifest.permission.VIBRATE,
 
-                //網路
+                //INTERNET
                 Manifest.permission.INTERNET,
 
-                //檔案
+                //FILE
                 Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
 
-                //照片
+                //CAMERA
                 Manifest.permission.CAMERA
         ));
 

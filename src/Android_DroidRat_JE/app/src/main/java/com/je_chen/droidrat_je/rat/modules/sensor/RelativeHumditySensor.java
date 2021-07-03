@@ -9,7 +9,7 @@ import com.je_chen.droidrat_je.rat.modules.sensor.sensor_super.SensorInterface;
 
 public class RelativeHumditySensor implements SensorInterface<Object>, SensorEventListener {
     private SensorManager sensorManager;
-    private boolean canUse;
+    private final boolean canUse;
 
     public RelativeHumditySensor(SensorManager sensorManager) {
         this.sensorManager = sensorManager;

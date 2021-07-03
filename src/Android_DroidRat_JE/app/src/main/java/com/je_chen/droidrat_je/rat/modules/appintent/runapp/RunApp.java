@@ -8,7 +8,7 @@ import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 public class RunApp {
 
-    private PackageManager packageManager;
+    private final PackageManager packageManager;
 
     public RunApp(PackageManager packageManager) {
         this.packageManager = packageManager;
