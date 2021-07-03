@@ -14,10 +14,10 @@ public class CallData extends DataFather {
 
             case "CallLogs":
                 System.out.println(dataArray[1]);
-                System.out.println("Phone Number :" + dataArray[2]);
-                System.out.println("Direction :" + dataArray[3]);
-                System.out.println("Call Duration :" + dataArray[4]);
-                System.out.println("Call Day Times :" + dataArray[5]);
+                System.out.println("Phone Number: " + dataArray[2]);
+                System.out.println("Direction: " + dataArray[3]);
+                System.out.println("Call Duration: " + dataArray[4]);
+                System.out.println("Call Day Times: " + dataArray[5]);
                 break;
         }
     }

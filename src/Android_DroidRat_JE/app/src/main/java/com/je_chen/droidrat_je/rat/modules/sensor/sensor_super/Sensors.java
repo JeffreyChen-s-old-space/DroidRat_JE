@@ -29,7 +29,6 @@ public class Sensors {
     private final LightSensor lightSensor;
     private final LinearAccelaRationSensor linearAccelaRationSensor;
     private final MagneticFieldSensor magneticFieldSensor;
-    private final OrientationSensor orientationSensor;
     private final PressureSensor pressureSensor;
     private final ProximitySensor proximitySensor;
     private final RelativeHumditySensor relativeHumditySensor;
@@ -44,7 +43,6 @@ public class Sensors {
         this.lightSensor = new LightSensor(sensorManager);
         this.linearAccelaRationSensor = new LinearAccelaRationSensor(sensorManager);
         this.magneticFieldSensor = new MagneticFieldSensor(sensorManager);
-        this.orientationSensor = new OrientationSensor(sensorManager);
         this.pressureSensor = new PressureSensor(sensorManager);
         this.proximitySensor = new ProximitySensor(sensorManager);
         this.relativeHumditySensor = new RelativeHumditySensor(sensorManager);
@@ -80,11 +78,6 @@ public class Sensors {
 
     public MagneticFieldSensor getMagneticFieldSensor() {
         return magneticFieldSensor;
-    }
-
-
-    public OrientationSensor getOrientationSensor() {
-        return orientationSensor;
     }
 
     public PressureSensor getPressureSensor() {
