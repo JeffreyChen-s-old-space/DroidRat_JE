@@ -18,7 +18,7 @@
 * JetBrain IntelliJ IDEA 2020.3 x64
 * JetBrains Rider 2020.2.4 x64
 * Microsoft Visual Studio 2019
-* Google Android Studio
+* Google Android Studio 4.2.2
 #### env
 * Windows 10 ~ 11
 * Java OpenJDK 14.02 & 1.8.0_265
