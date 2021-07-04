@@ -5,7 +5,7 @@ import android.content.Context;
 import com.je_chen.droidrat_je.rat.command.process_super.CommandFather;
 import com.je_chen.droidrat_je.rat.modules.appintent.mail.SendMail;
 
-import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websockets;
+import static com.je_chen.droidrat_je.service.command.ProcessCommandService.droidRatWebSocketClient;
 
 public class MailCommand extends CommandFather {
 
@@ -20,7 +20,7 @@ public class MailCommand extends CommandFather {
 
     @Override
     public void send(String value) {
-        websockets.send(value);
+        droidRatWebSocketClient.send(value);
     }
 
     @Override

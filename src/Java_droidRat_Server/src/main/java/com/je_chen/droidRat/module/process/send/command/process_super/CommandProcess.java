@@ -1,6 +1,6 @@
 package com.je_chen.droidRat.module.process.send.command.process_super;
 
-import com.je_chen.droidRat.module.WebSocketServerEndPoint;
+import com.je_chen.droidRat.module.DroidRatWebSocketServer;
 import com.je_chen.droidRat.module.process.send.command.process.InfoCommand;
 import com.je_chen.droidRat.module.process.send.command.process.SendCommand;
 
@@ -10,9 +10,9 @@ public class CommandProcess {
     private final InfoCommand infoCommand;
 
     public CommandProcess() {
-        WebSocketServerEndPoint webSocketServerEndPoint = new WebSocketServerEndPoint();
-        sendCommand = new SendCommand(webSocketServerEndPoint);
-        infoCommand = new InfoCommand(webSocketServerEndPoint);
+        DroidRatWebSocketServer droidRatWebSocketServer = new DroidRatWebSocketServer();
+        sendCommand = new SendCommand(droidRatWebSocketServer);
+        infoCommand = new InfoCommand(droidRatWebSocketServer);
     }
 
     public void processCommand(String rawString) {

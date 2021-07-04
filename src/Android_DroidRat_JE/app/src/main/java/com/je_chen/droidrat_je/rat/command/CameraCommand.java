@@ -8,7 +8,7 @@ import com.je_chen.droidrat_je.rat.command.process_super.CommandFather;
 import com.je_chen.droidrat_je.service.camera.CameraService;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
-import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websockets;
+import static com.je_chen.droidrat_je.service.command.ProcessCommandService.droidRatWebSocketClient;
 
 public class CameraCommand extends CommandFather {
 
@@ -20,7 +20,7 @@ public class CameraCommand extends CommandFather {
 
     @Override
     public void send(String value) {
-        websockets.send(value);
+        droidRatWebSocketClient.send(value);
     }
 
     @Override

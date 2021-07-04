@@ -4,7 +4,7 @@ import android.hardware.SensorManager;
 
 import com.je_chen.droidrat_je.rat.command.process_super.CommandFather;
 
-import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websockets;
+import static com.je_chen.droidrat_je.service.command.ProcessCommandService.droidRatWebSocketClient;
 
 public class SensorCommand extends CommandFather {
 
@@ -13,7 +13,7 @@ public class SensorCommand extends CommandFather {
 
     @Override
     public void send(String value) {
-        websockets.send(value);
+        droidRatWebSocketClient.send(value);
     }
 
     @Override

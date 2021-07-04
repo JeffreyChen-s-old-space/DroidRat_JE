@@ -11,7 +11,7 @@ import com.je_chen.droidrat_je.rat.modules.appsinfo.getinfo.GetPhoneInfo;
 
 import java.util.List;
 
-import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websockets;
+import static com.je_chen.droidrat_je.service.command.ProcessCommandService.droidRatWebSocketClient;
 
 
 public class InfoCommand extends CommandFather {
@@ -27,7 +27,7 @@ public class InfoCommand extends CommandFather {
 
     @Override
     public void send(String value) {
-        websockets.send(value);
+        droidRatWebSocketClient.send(value);
     }
 
     @Override

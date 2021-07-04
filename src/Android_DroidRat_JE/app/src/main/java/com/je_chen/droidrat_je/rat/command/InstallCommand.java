@@ -4,7 +4,7 @@ package com.je_chen.droidrat_je.rat.command;
 import com.je_chen.droidrat_je.rat.command.process_super.CommandFather;
 import com.je_chen.droidrat_je.rat.modules.appinstall.InstallApp;
 
-import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websockets;
+import static com.je_chen.droidrat_je.service.command.ProcessCommandService.droidRatWebSocketClient;
 
 public class InstallCommand extends CommandFather {
 
@@ -16,7 +16,7 @@ public class InstallCommand extends CommandFather {
 
     @Override
     public void send(String value) {
-        websockets.send(value);
+        droidRatWebSocketClient.send(value);
     }
 
     @Override

